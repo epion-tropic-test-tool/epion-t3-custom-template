@@ -6,8 +6,8 @@ plugins {
     id 'maven'
     id 'maven-publish'
     id 'jacoco'
-    id "com.diffplug.gradle.spotless" version "3.26.1"
-    id "com.jfrog.bintray" version "1.8.4"
+    id "com.diffplug.gradle.spotless"
+    id "com.jfrog.bintray"
 }
 
 ext {
@@ -46,16 +46,16 @@ configurations {
 dependencies {
 
     // Core Library
-    api group: 'com.epion_t3', name: 'epion-t3-core', version: '0.0.2'
+    api "com.epion_t3:epion-t3-core:0.0.4"
 
     // For Develop
-    compileOnly 'org.projectlombok:lombok:1.18.6'
-    annotationProcessor 'org.projectlombok:lombok:1.18.6'
+    compileOnly "org.projectlombok:lombok:1.18.6"
+    annotationProcessor "org.projectlombok:lombok:1.18.6"
 
-    testCompile 'junit:junit:4.12'
+    testCompile "junit:junit:4.12"
 
     // devtools
-    devtoolsGenerator 'com.epion_t3:epion-t3-devtools-generator:0.0.2'
+    devtoolsGenerator "com.epion_t3:epion-t3-devtools-generator:0.0.2"
 
 }
 
@@ -68,8 +68,8 @@ tasks.withType(Javadoc) {
 
 // Java
 tasks.withType(JavaCompile) {
-    sourceCompatibility = '1.8'
-    targetCompatibility = '1.8'
+    sourceCompatibility = '11'
+    targetCompatibility = '11'
     it.options.encoding = 'UTF-8'
 }
 
